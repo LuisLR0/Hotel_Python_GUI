@@ -1,8 +1,6 @@
 from customtkinter import *
-from components.routers import *
-
-def Cargar_Imagen(ruta, size):
-    return CTkImage(ruta, size=size)
+import modules.router.routers as rutas
+import modules.funcionalidadBasica.funcionalidad as FunciB 
 
 def Inicio(self):
         
@@ -13,13 +11,12 @@ def Inicio(self):
                                      fg_color=self.color_fondo
                                 )
         
-        self.panelInicio.grid(row=1, column=0)
-
+        self.panelInicio.grid(row=0, column=0)
         
         self.logoPrincipal = CTkLabel(
                                 self.panelInicio,
                                 text='',
-                                image=Cargar_Imagen(imagenLogo1, (350, 144.25)) # 1444x657
+                                image=CTkImage(rutas.imagenes['imagenLogo1'], size=(350, 144.25)) # 1444x657
                             )
         
         self.botonRentar = CTkButton(
@@ -32,7 +29,8 @@ def Inicio(self):
                                         corner_radius=20,
                                         text_color='#000',
                                         font=self.fuenteHelvetica_Botones,
-                                        cursor="hand2"
+                                        cursor="hand2",
+                                        command= lambda: FunciB.mostrar_frame(self.Marco_Class)
                                     )
         
         self.botonMostrar = CTkButton(
@@ -64,7 +62,7 @@ def Inicio(self):
         self.decoracionInferior = CTkLabel(
                                 self.panelInicio,
                                 text='',
-                                image=Cargar_Imagen(imagenDecoracion, (306, 48)) # 1224x192
+                                image=CTkImage(rutas.imagenes['imagenDecoracion'], size=(306, 48)) # 1224x192
                             )
         
         self.logoPrincipal.place(x=75, y=20)

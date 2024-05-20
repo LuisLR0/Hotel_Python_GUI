@@ -1,2 +1,8 @@
 PDF
 assets/Ilustrator.ai
+bd/__pycache__
+modules/router/__pycache__
+modules/SeccionRentar/__pycache__
+modules/SeccionRentar/funcionalidad/__pycache__
+modules/VistaInicio/__pycache__
+modules/__pycache__
